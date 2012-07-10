@@ -1,9 +1,14 @@
 package com.twu28.biblioteca;
 
 public class DisplayBookListAction implements IAction {
-    Library library;
+     private Library library;
     public DisplayBookListAction(Library library) {
         this.library = library;
+    }
+
+    @Override
+    public String actionName() {
+        return "Display Book List";
     }
 
     @Override

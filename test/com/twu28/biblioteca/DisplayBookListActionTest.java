@@ -2,10 +2,18 @@ package com.twu28.biblioteca;
 
 import org.junit.Test;
 
+import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 import static org.junit.matchers.JUnitMatchers.containsString;
 
 public class DisplayBookListActionTest {
+
+    @Test
+    public void should_display_name_of_action(){
+        DisplayBookListAction action = new DisplayBookListAction(new Library());
+
+        assertThat(action.actionName(), equalTo("Display Book List"));
+    }
 
     @Test
     public void should_display_heading(){

@@ -9,9 +9,9 @@ public class Library {
         return books;
     }
 
-    public boolean issueBook(Book book) {
-        if(books.contains(book)){
-           return books.get(books.indexOf(book)).issue();
+    public boolean issueBook(int bookNumber) {
+        if(bookNumber < books.size()){
+           return books.get(bookNumber).issue();
         }else{
             throw new IllegalArgumentException();
         }

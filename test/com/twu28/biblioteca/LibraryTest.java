@@ -14,7 +14,7 @@ public class LibraryTest {
 
         library.getBookList().add(book);
 
-        assertTrue(library.issueBook(new Book("Head First Java", "Kathy Sierra")));
+        assertTrue(library.issueBook(0));
     }
 
     @Test
@@ -23,8 +23,17 @@ public class LibraryTest {
         Book book = new Book("Head First Java","Kathy Sierra");
 
         library.getBookList().add(book);
-        library.issueBook(new Book("Head First Java", "Kathy Sierra"));
+        library.issueBook(0);
 
-        assertFalse(library.issueBook(new Book("Head First Java", "Kathy Sierra")));
+        assertFalse(library.issueBook(0));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void should_throw_exception_if_book_details_are_incorrect(){
+        Library library = new Library();
+        Book book = new Book("Head First Java","Kathy Sierra");
+
+        library.getBookList().add(book);
+        library.issueBook(2);
     }
 }
