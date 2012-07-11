@@ -20,7 +20,11 @@ public class DisplayBookListAction implements IAction {
     public void execute(IConsole console) {
         console.writeLine("Following is the List of Books :");
         for(Book book:library.getBookList()){
-            console.writeLine(book.getDetails());
+            writeBookDetail(console, book);
         }
+    }
+
+    private void writeBookDetail(IConsole console, Book book) {
+        console.writeLine(book.getDetails());
     }
 }

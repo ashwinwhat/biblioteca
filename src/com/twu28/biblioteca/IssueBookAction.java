@@ -26,6 +26,10 @@ public class IssueBookAction implements IAction{
         String choice = console.readLine();
         int bookNumber = Integer.parseInt(choice);
         --bookNumber;
+        issueSelectedBook(console, bookNumber);
+    }
+
+    private void issueSelectedBook(IConsole console, int bookNumber) {
         if(library.issueBook(bookNumber)){
             console.writeLine("Thank You! Enjoy the book.");
         }else{
