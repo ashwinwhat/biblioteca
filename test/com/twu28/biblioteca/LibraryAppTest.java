@@ -53,6 +53,17 @@ public class LibraryAppTest {
         assertThat(console.getOutput(),containsString("Action1 selected."));
     }
 
+    @Test
+    public void should_mention_if_input_is_incorrect(){
+        FakeConsole console = new FakeConsole();
+        ArrayList<IAction> actions = createActionsArray();
+        console.addInputs("5","2");
+
+        LibraryApp libraryApp = new LibraryApp(new Library(),actions,console);
+
+        assertThat(console.getOutput(),containsString("Select a valid option!"));
+    }
+
     private ArrayList<IAction> createActionsArray() {
         ArrayList<IAction> actions = new ArrayList<IAction>();
         actions.add(createAction());

@@ -73,8 +73,8 @@ public class IssueBookActionTest {
         assertThat(console.getOutput(), containsString("Sorry we don't have that book yet."));
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void should_throw_exception_if_input_is_invalid(){
+    @Test
+    public void should_display_message_if_input_is_invalid(){
         Library library = new Library();
         Book book = new Book("Head First Java","Kathy Sierra");
         library.getBookList().add(book);
@@ -83,5 +83,7 @@ public class IssueBookActionTest {
         console.addInputs("2");
 
         action.execute(console);
+
+        assertThat(console.getOutput(), containsString("Please select a valid option!"));
     }
 }

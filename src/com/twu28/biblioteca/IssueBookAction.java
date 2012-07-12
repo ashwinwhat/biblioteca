@@ -21,7 +21,11 @@ public class IssueBookAction implements IAction{
         String choice = console.readLine();
         int bookNumber = Integer.parseInt(choice);
         --bookNumber;
-        issueSelectedBook(console, bookNumber);
+        try{
+            issueSelectedBook(console, bookNumber);
+        }catch (IllegalArgumentException incorrectEntry){
+            console.writeLine("Please select a valid option.");
+        }
     }
 
     private void issueSelectedBook(IConsole console, int bookNumber) {

@@ -25,11 +25,22 @@ public class LibraryApp {
             String userChoice = console.readLine();
             int index = Integer.parseInt(userChoice);
             --index;
-            if (index == (actions.size() - 1)) {
-                isQuitAction = true;
+            if(index < actions.size())
+            {
+                isQuitAction = executeSelectedOption(isQuitAction, index);
+            }else{
+                console.writeLine("Select a valid option!");
             }
-            actions.get(index).execute(console);
+
         } while (!isQuitAction);
+    }
+
+    private boolean executeSelectedOption(boolean quitAction, int index) {
+        if (index == (actions.size() - 1)) {
+            quitAction = true;
+        }
+        actions.get(index).execute(console);
+        return quitAction;
     }
 
     private void displayActionName(int iterator) {
