@@ -12,11 +12,6 @@ public class QuitAction implements IAction{
     }
 
     @Override
-    public boolean isExit() {
-        return true;
-    }
-
-    @Override
     public void execute(IConsole console) {
         console.writeLine("Goodbye!");
     }

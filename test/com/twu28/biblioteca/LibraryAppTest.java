@@ -13,7 +13,7 @@ public class LibraryAppTest {
     public void should_display_welcome_message(){
         FakeConsole console = new FakeConsole();
         ArrayList<IAction> actions = createActionsArray();
-        console.addInputs("1");
+        console.addInputs("1","2");
 
         LibraryApp libraryApp = new LibraryApp(new Library(),actions,console);
 
@@ -24,7 +24,7 @@ public class LibraryAppTest {
     public void should_display_choose_action_message(){
         FakeConsole console = new FakeConsole();
         ArrayList<IAction> actions = createActionsArray();
-        console.addInputs("1");
+        console.addInputs("1","2");
 
         LibraryApp libraryApp = new LibraryApp(new Library(),actions,console);
 
@@ -35,7 +35,7 @@ public class LibraryAppTest {
     public void should_display_list_of_actions(){
         FakeConsole console = new FakeConsole();
         ArrayList<IAction> actions = createActionsArray();
-        console.addInputs("1");
+        console.addInputs("1","2");
 
         LibraryApp libraryApp = new LibraryApp(new Library(),actions,console);
 
@@ -46,7 +46,7 @@ public class LibraryAppTest {
     public void should_execute_selected_action(){
         FakeConsole console = new FakeConsole();
         ArrayList<IAction> actions = createActionsArray();
-        console.addInputs("1");
+        console.addInputs("1","2");
 
         LibraryApp libraryApp = new LibraryApp(new Library(),actions,console);
 
@@ -66,11 +66,6 @@ public class LibraryAppTest {
                 @Override
                 public String actionName() {
                     return "Action 1";
-                }
-
-                @Override
-                public boolean isExit() {
-                    return false;
                 }
 
                 @Override

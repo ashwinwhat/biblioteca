@@ -13,11 +13,6 @@ public class IssueBookAction implements IAction{
     }
 
     @Override
-    public boolean isExit() {
-        return false;
-    }
-
-    @Override
     public void execute(IConsole console) {
         for(int iterator = 0 ; iterator < library.getBookList().size() ; iterator++){
             console.writeLine(iterator+1 + ") " + library.getBookList().get(iterator).getDetails());

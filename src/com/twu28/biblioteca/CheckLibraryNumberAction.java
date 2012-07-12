@@ -14,11 +14,6 @@ public class CheckLibraryNumberAction implements IAction{
     }
 
     @Override
-    public boolean isExit() {
-        return false;
-    }
-
-    @Override
     public void execute(IConsole console) {
         console.writeLine("Please talk to the librarian.");
     }

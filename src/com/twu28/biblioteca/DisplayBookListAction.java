@@ -12,11 +12,6 @@ public class DisplayBookListAction implements IAction {
     }
 
     @Override
-    public boolean isExit() {
-        return false;
-    }
-
-    @Override
     public void execute(IConsole console) {
         console.writeLine("Following is the List of Books :");
         for(Book book:library.getBookList()){
