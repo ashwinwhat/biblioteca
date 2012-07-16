@@ -61,6 +61,7 @@ public class LibraryApp {
         actions.add(new DisplayBookListAction(library));
         actions.add(new IssueBookAction(library));
         actions.add(new CheckLibraryNumberAction(library));
+        actions.add(new DisplayMovieListAction(library));
         actions.add(new QuitAction(library));
 
         LibraryApp libraryApp = new LibraryApp(library,actions,console);

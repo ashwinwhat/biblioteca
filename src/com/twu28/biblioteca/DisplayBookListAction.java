@@ -1,7 +1,7 @@
 package com.twu28.biblioteca;
 
 public class DisplayBookListAction implements IAction {
-     private Library library;
+    private Library library;
     public DisplayBookListAction(Library library) {
         this.library = library;
     }
